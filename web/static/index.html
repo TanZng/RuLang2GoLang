@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=devide-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.15.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2/dist/tailwind.min.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="flex flex-col h-screen justify-between">
+
+<div class="m-5 md:m-10 grid md:grid-cols-2 md:gap-4 gap-1 grid-cols-1">
+
+<div class="md:col-span-2 col-span-1 justify-self-center">
+    <h2 class="text-6xl font-extrabold text-transparent text-8xl bg-clip-text bg-gradient-to-r from-purple-600 to-pink-400 pb-1">
+        RuLang!
+    </h2>
+    <p class="text-lg">Ru 2 Go Translator</p>
+</div>
+
+<div id="formBody" >
+    <form method="POST" id="inputForm">
+        <div class="m-10 grid grid-row-2 gap-4">
+            <div class="mockup-code">
+                <pre for="message" data-prefix="$">main.ru</pre>
+                <textarea onkeyup="textAreaAdjust(this)" id="message" name="message" class="ml-12 textarea textarea-ghost form-control resize">imprime("Hello World!");</textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Run!</button>
+        </div>
+    </form>
+
+
+</div>
+
+<div class="m-10 grid grid-row-2 gap-4">
+    <div  id="serverMessageBox" class="mockup-code">
+        <pre data-prefix="$"><code>ru ./main.ru</code></pre>
+    </div>
+</div>
+</div>
+<footer class="footer items-center p-4 bg-neutral text-neutral-content md:col-span-2 col-span-1 ">
+    <div class="items-center grid-flow-col">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M2 5a2 2 0 012-2h12a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V5zm3.293 1.293a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 01-1.414-1.414L7.586 10 5.293 7.707a1 1 0 010-1.414zM11 12a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd" />
+        </svg>
+        <p>Made with 💙 by Tania R. Zúñiga, 2022</p>
+    </div>
+    <div class="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
+        <a href="https://github.com/TanZng/Ru2Go">
+            <svg viewBox="0 0 16 16" class="w-10 h-10" aria-hidden="true" fill="currentColor">
+                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+            </svg>
+        </a>
+    </div>
+</footer>
+
+
+</body>
+<script src="/web/static/main.js"></script>
+</html>
