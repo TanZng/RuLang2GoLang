@@ -1,0 +1,14 @@
+version: "3"
+services:
+  go-api:
+    build: ./
+    environment:
+      GO111MODULE: "on"
+    ports:
+      - '5555:5555'
+    volumes:
+      - ./:/app
+    networks:
+      - webapp
+networks:
+  webapp:
