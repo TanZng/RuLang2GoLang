@@ -1,6 +1,16 @@
 # Ru2Go Translator
 
-> Tania R. Zúñiga - Traductores Trimestre 22 I
+
+>🧡 **Universidad Autónoma Metropolitana** 🧡
+> 
+> By Tania R. Zúñiga 👩🏼‍💻
+> 
+> Guidance Dr. Roberto Bernal Jaquez 🔎
+
+
+Proyecto final para la materia Traductores - Trimestre 22 Invierno ⛄
+
+TL;DR Traductor de RuLang escrito en GoLang. 🐹
 
 ![Test](./img/RuExample.gif "Test")
 
