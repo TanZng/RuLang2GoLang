@@ -1,7 +1,9 @@
 version: "3.6"
 services:
   goservice:
-    build: "."
+    build:
+      context: "."
+      dockerfile: "Dockerfile.production"
     ports:
       - "5555"
   nginx:

@@ -1,12 +1,13 @@
-FROM golang:alpine AS build
-RUN apk --no-cache add gcc g++ make git
-WORKDIR /go/src/app
-COPY . .
-RUN GOOS=linux go build -ldflags="-s -w" -o ./bin/web-app ./main.go
+FROM golang:1.18-alpine AS builder
+RUN mkdir /out
+ADD . /out/
+WORKDIR /out
+RUN go build -o webapp
 
-FROM alpine:3.13
-RUN apk --no-cache add ca-certificates
-WORKDIR /usr/bin
-COPY --from=build /go/src/app/bin /go/bin
-EXPOSE 5555
-ENTRYPOINT /go/bin/web-app --port 5555
+FROM alpine
+RUN adduser -S -D -H -h /app appuser
+USER appuser
+COPY --from=builder /out/webapp /app/
+COPY web/ /app/web
+WORKDIR /app
+CMD ["./webapp"]
