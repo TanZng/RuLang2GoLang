@@ -46,6 +46,9 @@ type RuVisitor interface {
 	// Visit a parse tree produced by RuParser#multiplicacionExpr.
 	VisitMultiplicacionExpr(ctx *MultiplicacionExprContext) interface{}
 
+	// Visit a parse tree produced by RuParser#PowExpr.
+	VisitPowExpr(ctx *PowExprContext) interface{}
+
 	// Visit a parse tree produced by RuParser#atomExpr.
 	VisitAtomExpr(ctx *AtomExprContext) interface{}
 

@@ -47,6 +47,9 @@ type RuListener interface {
 	// EnterMultiplicacionExpr is called when entering the multiplicacionExpr production.
 	EnterMultiplicacionExpr(c *MultiplicacionExprContext)
 
+	// EnterPowExpr is called when entering the PowExpr production.
+	EnterPowExpr(c *PowExprContext)
+
 	// EnterAtomExpr is called when entering the atomExpr production.
 	EnterAtomExpr(c *AtomExprContext)
 
@@ -121,6 +124,9 @@ type RuListener interface {
 
 	// ExitMultiplicacionExpr is called when exiting the multiplicacionExpr production.
 	ExitMultiplicacionExpr(c *MultiplicacionExprContext)
+
+	// ExitPowExpr is called when exiting the PowExpr production.
+	ExitPowExpr(c *PowExprContext)
 
 	// ExitAtomExpr is called when exiting the atomExpr production.
 	ExitAtomExpr(c *AtomExprContext)

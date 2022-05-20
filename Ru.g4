@@ -47,15 +47,16 @@ imprimir
 
 
 expr
- : MENOS right=expr                                           #MenosUnarioExpr
- | NOT right=expr                                             #notExpr
- | left=expr op=(MULT | DIV | MOD) right=expr                 #multiplicacionExpr
- | left=expr op=(MAS | MENOS) right=expr                      #aditivaExpr
- | left=expr op=(MAYIG | MENIG | MENORQ | MAYORQ) right=expr  #relacionalExpr
- | left=expr op=(IGUAL | DIFQ) right=expr                     #igualdadExpr
- | left=expr AND right=expr                                   #andExpr
- | left=expr OR right=expr                                    #orExpr
- | atomo                                                      #atomExpr
+ : <assoc=right>expr POW expr                                   #PowExpr
+ | MENOS right=expr                                             #MenosUnarioExpr
+ | NOT right=expr                                               #notExpr
+ | left=expr op=(MULT | DIV | MOD) right=expr                   #multiplicacionExpr
+ | left=expr op=(MAS | MENOS) right=expr                        #aditivaExpr
+ | left=expr op=(MAYIG | MENIG | MENORQ | MAYORQ) right=expr    #relacionalExpr
+ | left=expr op=(IGUAL | DIFQ) right=expr                       #igualdadExpr
+ | left=expr AND right=expr                                     #andExpr
+ | left=expr OR right=expr                                      #orExpr
+ | atomo                                                        #atomExpr
  ;
 
 atomo

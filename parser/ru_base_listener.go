@@ -99,6 +99,12 @@ func (s *BaseRuListener) EnterMultiplicacionExpr(ctx *MultiplicacionExprContext)
 // ExitMultiplicacionExpr is called when production multiplicacionExpr is exited.
 func (s *BaseRuListener) ExitMultiplicacionExpr(ctx *MultiplicacionExprContext) {}
 
+// EnterPowExpr is called when production PowExpr is entered.
+func (s *BaseRuListener) EnterPowExpr(ctx *PowExprContext) {}
+
+// ExitPowExpr is called when production PowExpr is exited.
+func (s *BaseRuListener) ExitPowExpr(ctx *PowExprContext) {}
+
 // EnterAtomExpr is called when production atomExpr is entered.
 func (s *BaseRuListener) EnterAtomExpr(ctx *AtomExprContext) {}
 

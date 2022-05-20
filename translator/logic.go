@@ -1,176 +1,175 @@
 package translator
 
-import "RuLang2GoLang/utils"
+import "math"
 
 func realizarOpMath(l, r Value, op string, line int) Value {
-	switch l.value.(type) {
+	switch l.Value.(type) {
 	case int64:
-		switch r.value.(type) {
+		switch r.Value.(type) {
 		case int64:
 			//
-			return realizarOpInt(l.value.(int64), r.value.(int64), op)
+			return realizarOpInt(l.Value.(int64), r.Value.(int64), op, line)
 		case float64:
-			utils.SyntaxError("Imposible to operate INT"+op+"FLOAT", line)
+			return SyntaxError("Imposible to operate INT"+op+"FLOAT", line)
 		default:
-			utils.SyntaxError("Imposible to operate INT"+op+"INT", line)
+			return SyntaxError("Imposible to operate INT"+op+"INT", line)
 		}
 	case float64:
-		switch r.value.(type) {
+		switch r.Value.(type) {
 		case float64:
-			return realizarOpFloat(l.value.(float64), r.value.(float64), op, line)
+			return realizarOpFloat(l.Value.(float64), r.Value.(float64), op, line)
 		case int64:
-			utils.SyntaxError("Imposible to operate FLOAT"+op+"INT", line)
+			return SyntaxError("Imposible to operate FLOAT"+op+"INT", line)
 		default:
-			utils.SyntaxError("Imposible to operate FLOAT"+op+"FLOAT", line)
+			return SyntaxError("Imposible to operate FLOAT"+op+"FLOAT", line)
 		}
 	default:
-		utils.SyntaxError("Operator"+op+"only allows FLOAT or INT", line)
+		return SyntaxError("Operator"+op+"only allows FLOAT or INT", line)
 	}
-	return Value{value: false}
+	return Value{Value: false}
 }
 
-func realizarOpInt(l, r int64, op string) Value {
+func realizarOpInt(l, r int64, op string, line int) Value {
 	switch op {
 	case "<":
-		return Value{value: l < r}
+		return Value{Value: l < r}
 	case ">":
-		return Value{value: l > r}
+		return Value{Value: l > r}
 	case ">=":
-		return Value{value: l >= r}
+		return Value{Value: l >= r}
 	case "<=":
-		return Value{value: l <= r}
+		return Value{Value: l <= r}
 	case "+":
-		return Value{value: l + r}
+		return Value{Value: l + r}
 	case "-":
-		return Value{value: l - r}
+		return Value{Value: l - r}
 	case "*":
-		return Value{value: l * r}
+		return Value{Value: l * r}
 	case "/":
-		return Value{value: l / r}
+		return Value{Value: l / r}
 	case "%":
-		return Value{value: l % r}
+		return Value{Value: l % r}
+	case "^":
+		return Value{Value: math.Pow(float64(l), float64(r))}
 	}
-	return Value{value: false}
+	return SyntaxError("Invalid operation"+op, line)
 }
 
 func realizarOpFloat(l, r float64, op string, line int) Value {
 	switch op {
 	case "<":
-		return Value{value: l < r}
+		return Value{Value: l < r}
 	case ">":
-		return Value{value: l > r}
+		return Value{Value: l > r}
 	case ">=":
-		return Value{value: l >= r}
+		return Value{Value: l >= r}
 	case "<=":
-		return Value{value: l <= r}
+		return Value{Value: l <= r}
 	case "+":
-		return Value{value: l + r}
+		return Value{Value: l + r}
 	case "-":
-		return Value{value: l - r}
+		return Value{Value: l - r}
 	case "*":
-		return Value{value: l * r}
+		return Value{Value: l * r}
 	case "/":
-		return Value{value: l / r}
+		return Value{Value: l / r}
 	case "%":
-		utils.SyntaxError("FLOAT % FLOAT invalid operation ", line)
+		return SyntaxError("FLOAT % FLOAT invalid operation ", line)
+	case "^":
+		return Value{Value: math.Pow(l, r)}
 	}
-	return Value{value: false}
+	return SyntaxError("Invalid operation"+op, line)
 }
 
 func realizarOpBool(l, r Value, op string, line int) Value {
-	switch l.value.(type) {
+	switch l.Value.(type) {
 	case bool:
-		switch r.value.(type) {
+		switch r.Value.(type) {
 		case bool:
-			rv := r.value.(bool)
-			lv := l.value.(bool)
+			rv := r.Value.(bool)
+			lv := l.Value.(bool)
 			if op == "&&" {
-				return Value{value: rv && lv}
+				return Value{Value: rv && lv}
 			} else if op == "||" {
-				return Value{value: rv || lv}
+				return Value{Value: rv || lv}
 			} else {
-				utils.SyntaxError("BOOL"+op+"BOOL invalid operation", line)
+				return SyntaxError("BOOL"+op+"BOOL invalid operation", line)
 			}
 		default:
-			utils.SyntaxError("Operator "+op+" operates only between BOOLs", line)
+			return SyntaxError("Operator "+op+" operates only between BOOLs", line)
 		}
 	default:
-		utils.SyntaxError("Operator "+op+" operates only between BOOLs", line)
+		return SyntaxError("Operator "+op+" operates only between BOOLs", line)
 	}
-	return Value{value: false}
+	return Value{Value: false}
 }
 
 func realizarIgualdad(l, r Value, op string, line int) Value {
-	switch l.value.(type) {
+	switch l.Value.(type) {
 	case int64:
-		switch r.value.(type) {
+		switch r.Value.(type) {
 		case int64:
 			//
-			return realizarIgualdadInt(l.value.(int64), r.value.(int64))
+			return realizarIgualdadInt(l.Value.(int64), r.Value.(int64))
 		default:
-			utils.SyntaxError("Operation "+op+" only works with same type,", line)
+			return SyntaxError("Operation "+op+" only works with same type,", line)
 		}
 	case float64:
-		switch r.value.(type) {
+		switch r.Value.(type) {
 		case float64:
-			return realizarIgualdadFloat(l.value.(float64), r.value.(float64))
+			return realizarIgualdadFloat(l.Value.(float64), r.Value.(float64))
 		default:
-			utils.SyntaxError("Operation "+op+" only works with same type,", line)
+			return SyntaxError("Operation "+op+" only works with same type,", line)
 		}
 	case bool:
-		switch r.value.(type) {
+		switch r.Value.(type) {
 		case bool:
-			return realizarIgualdadBool(l.value.(bool), r.value.(bool))
+			return realizarIgualdadBool(l.Value.(bool), r.Value.(bool))
 		default:
-			utils.SyntaxError("Operation "+op+" only works with same type,", line)
+			return SyntaxError("Operation "+op+" only works with same type,", line)
 		}
 	case string:
-		switch r.value.(type) {
+		switch r.Value.(type) {
 		case string:
-			return realizarIgualdadString(l.value.(string), r.value.(string))
+			return realizarIgualdadString(l.Value.(string), r.Value.(string))
 		default:
-			utils.SyntaxError("Operation "+op+" only works with same type,", line)
+			return SyntaxError("Operation "+op+" only works with same type,", line)
 		}
 	default:
-		utils.SyntaxError("Operator"+op+"only allows FLOAT or INT", line)
+		return SyntaxError("Operator"+op+"only allows FLOAT or INT", line)
 	}
-	return Value{value: false}
 }
 
 func realizarIgualdadString(s, s2 string) Value {
-	return Value{value: s == s2}
+	return Value{Value: s == s2}
 }
 
 func realizarIgualdadBool(b bool, b2 bool) Value {
-	return Value{value: b == b2}
+	return Value{Value: b == b2}
 }
 
 func realizarIgualdadFloat(f float64, f2 float64) Value {
-	return Value{value: f == f2}
+	return Value{Value: f == f2}
 }
 
 func realizarIgualdadInt(i int64, i2 int64) Value {
-	return Value{value: i == i2}
+	return Value{Value: i == i2}
 }
 
 func realizarNot(l Value, line int) Value {
-	switch l.value.(type) {
+	switch l.Value.(type) {
 	case bool:
-		return Value{value: !l.value.(bool)}
+		return Value{Value: !l.Value.(bool)}
 	}
-	utils.SyntaxError(" ! (not) operation is only for BOOL", line)
-
-	return Value{value: false}
+	return SyntaxError(" ! (not) operation is only for BOOL", line)
 }
 
 func realizarNegativo(l Value, line int) Value {
-	switch l.value.(type) {
+	switch l.Value.(type) {
 	case int64:
-		return Value{value: -l.value.(int64)}
+		return Value{Value: -l.Value.(int64)}
 	case float64:
-		return Value{value: -l.value.(float64)}
+		return Value{Value: -l.Value.(float64)}
 	}
-	utils.SyntaxError(" - (negative) operation is only for INT or FLOAT", line)
-
-	return Value{value: false}
+	return SyntaxError(" - (negative) operation is only for INT or FLOAT", line)
 }

@@ -52,7 +52,7 @@ func ruParserInit() {
   }
   staticData.predictionContextCache = antlr.NewPredictionContextCache()
   staticData.serializedATN = []int32{
-	4, 1, 36, 125, 2, 0, 7, 0, 2, 1, 7, 1, 2, 2, 7, 2, 2, 3, 7, 3, 2, 4, 7, 
+	4, 1, 36, 128, 2, 0, 7, 0, 2, 1, 7, 1, 2, 2, 7, 2, 2, 3, 7, 3, 2, 4, 7, 
 	4, 2, 5, 7, 5, 2, 6, 7, 6, 2, 7, 7, 7, 2, 8, 7, 8, 2, 9, 7, 9, 2, 10, 7, 
 	10, 2, 11, 7, 11, 1, 0, 1, 0, 1, 0, 1, 1, 5, 1, 29, 8, 1, 10, 1, 12, 1, 
 	32, 9, 1, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 3, 2, 41, 8, 2, 1, 
@@ -62,50 +62,51 @@ func ruParserInit() {
 	8, 1, 8, 1, 9, 1, 9, 1, 9, 1, 9, 1, 10, 1, 10, 1, 10, 1, 10, 1, 10, 1, 
 	10, 3, 10, 89, 8, 10, 1, 10, 1, 10, 1, 10, 1, 10, 1, 10, 1, 10, 1, 10, 
 	1, 10, 1, 10, 1, 10, 1, 10, 1, 10, 1, 10, 1, 10, 1, 10, 1, 10, 1, 10, 1, 
-	10, 5, 10, 109, 8, 10, 10, 10, 12, 10, 112, 9, 10, 1, 11, 1, 11, 1, 11, 
-	1, 11, 1, 11, 1, 11, 1, 11, 1, 11, 1, 11, 3, 11, 123, 8, 11, 1, 11, 0, 
-	1, 20, 12, 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 0, 6, 1, 0, 11, 13, 
-	1, 0, 9, 10, 1, 0, 5, 8, 1, 0, 3, 4, 1, 0, 31, 32, 1, 0, 22, 23, 133, 0, 
-	24, 1, 0, 0, 0, 2, 30, 1, 0, 0, 0, 4, 40, 1, 0, 0, 0, 6, 42, 1, 0, 0, 0, 
-	8, 47, 1, 0, 0, 0, 10, 61, 1, 0, 0, 0, 12, 66, 1, 0, 0, 0, 14, 70, 1, 0, 
-	0, 0, 16, 74, 1, 0, 0, 0, 18, 78, 1, 0, 0, 0, 20, 88, 1, 0, 0, 0, 22, 122, 
-	1, 0, 0, 0, 24, 25, 3, 2, 1, 0, 25, 26, 5, 0, 0, 1, 26, 1, 1, 0, 0, 0, 
-	27, 29, 3, 4, 2, 0, 28, 27, 1, 0, 0, 0, 29, 32, 1, 0, 0, 0, 30, 28, 1, 
-	0, 0, 0, 30, 31, 1, 0, 0, 0, 31, 3, 1, 0, 0, 0, 32, 30, 1, 0, 0, 0, 33, 
-	41, 3, 6, 3, 0, 34, 41, 3, 8, 4, 0, 35, 41, 3, 14, 7, 0, 36, 41, 3, 16, 
-	8, 0, 37, 41, 3, 18, 9, 0, 38, 39, 5, 36, 0, 0, 39, 41, 6, 2, -1, 0, 40, 
-	33, 1, 0, 0, 0, 40, 34, 1, 0, 0, 0, 40, 35, 1, 0, 0, 0, 40, 36, 1, 0, 0, 
-	0, 40, 37, 1, 0, 0, 0, 40, 38, 1, 0, 0, 0, 41, 5, 1, 0, 0, 0, 42, 43, 5, 
-	30, 0, 0, 43, 44, 5, 17, 0, 0, 44, 45, 3, 20, 10, 0, 45, 46, 5, 16, 0, 
-	0, 46, 7, 1, 0, 0, 0, 47, 48, 5, 25, 0, 0, 48, 54, 3, 10, 5, 0, 49, 50, 
-	5, 26, 0, 0, 50, 51, 5, 25, 0, 0, 51, 53, 3, 10, 5, 0, 52, 49, 1, 0, 0, 
-	0, 53, 56, 1, 0, 0, 0, 54, 52, 1, 0, 0, 0, 54, 55, 1, 0, 0, 0, 55, 59, 
-	1, 0, 0, 0, 56, 54, 1, 0, 0, 0, 57, 58, 5, 26, 0, 0, 58, 60, 3, 12, 6, 
-	0, 59, 57, 1, 0, 0, 0, 59, 60, 1, 0, 0, 0, 60, 9, 1, 0, 0, 0, 61, 62, 5, 
-	18, 0, 0, 62, 63, 3, 20, 10, 0, 63, 64, 5, 19, 0, 0, 64, 65, 3, 12, 6, 
-	0, 65, 11, 1, 0, 0, 0, 66, 67, 5, 20, 0, 0, 67, 68, 3, 2, 1, 0, 68, 69, 
-	5, 21, 0, 0, 69, 13, 1, 0, 0, 0, 70, 71, 5, 27, 0, 0, 71, 72, 3, 20, 10, 
-	0, 72, 73, 3, 12, 6, 0, 73, 15, 1, 0, 0, 0, 74, 75, 5, 28, 0, 0, 75, 76, 
-	3, 20, 10, 0, 76, 77, 5, 16, 0, 0, 77, 17, 1, 0, 0, 0, 78, 79, 5, 29, 0, 
-	0, 79, 80, 3, 20, 10, 0, 80, 81, 5, 16, 0, 0, 81, 19, 1, 0, 0, 0, 82, 83, 
-	6, 10, -1, 0, 83, 84, 5, 10, 0, 0, 84, 89, 3, 20, 10, 9, 85, 86, 5, 15, 
-	0, 0, 86, 89, 3, 20, 10, 8, 87, 89, 3, 22, 11, 0, 88, 82, 1, 0, 0, 0, 88, 
-	85, 1, 0, 0, 0, 88, 87, 1, 0, 0, 0, 89, 110, 1, 0, 0, 0, 90, 91, 10, 7, 
-	0, 0, 91, 92, 7, 0, 0, 0, 92, 109, 3, 20, 10, 8, 93, 94, 10, 6, 0, 0, 94, 
-	95, 7, 1, 0, 0, 95, 109, 3, 20, 10, 7, 96, 97, 10, 5, 0, 0, 97, 98, 7, 
-	2, 0, 0, 98, 109, 3, 20, 10, 6, 99, 100, 10, 4, 0, 0, 100, 101, 7, 3, 0, 
-	0, 101, 109, 3, 20, 10, 5, 102, 103, 10, 3, 0, 0, 103, 104, 5, 2, 0, 0, 
-	104, 109, 3, 20, 10, 4, 105, 106, 10, 2, 0, 0, 106, 107, 5, 1, 0, 0, 107, 
-	109, 3, 20, 10, 3, 108, 90, 1, 0, 0, 0, 108, 93, 1, 0, 0, 0, 108, 96, 1, 
-	0, 0, 0, 108, 99, 1, 0, 0, 0, 108, 102, 1, 0, 0, 0, 108, 105, 1, 0, 0, 
-	0, 109, 112, 1, 0, 0, 0, 110, 108, 1, 0, 0, 0, 110, 111, 1, 0, 0, 0, 111, 
-	21, 1, 0, 0, 0, 112, 110, 1, 0, 0, 0, 113, 114, 5, 18, 0, 0, 114, 115, 
-	3, 20, 10, 0, 115, 116, 5, 19, 0, 0, 116, 123, 1, 0, 0, 0, 117, 123, 7, 
-	4, 0, 0, 118, 123, 7, 5, 0, 0, 119, 123, 5, 30, 0, 0, 120, 123, 5, 33, 
-	0, 0, 121, 123, 5, 24, 0, 0, 122, 113, 1, 0, 0, 0, 122, 117, 1, 0, 0, 0, 
-	122, 118, 1, 0, 0, 0, 122, 119, 1, 0, 0, 0, 122, 120, 1, 0, 0, 0, 122, 
-	121, 1, 0, 0, 0, 123, 23, 1, 0, 0, 0, 8, 30, 40, 54, 59, 88, 108, 110, 
-	122,
+	10, 1, 10, 1, 10, 1, 10, 5, 10, 112, 8, 10, 10, 10, 12, 10, 115, 9, 10, 
+	1, 11, 1, 11, 1, 11, 1, 11, 1, 11, 1, 11, 1, 11, 1, 11, 1, 11, 3, 11, 126, 
+	8, 11, 1, 11, 0, 1, 20, 12, 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 
+	0, 6, 1, 0, 11, 13, 1, 0, 9, 10, 1, 0, 5, 8, 1, 0, 3, 4, 1, 0, 31, 32, 
+	1, 0, 22, 23, 137, 0, 24, 1, 0, 0, 0, 2, 30, 1, 0, 0, 0, 4, 40, 1, 0, 0, 
+	0, 6, 42, 1, 0, 0, 0, 8, 47, 1, 0, 0, 0, 10, 61, 1, 0, 0, 0, 12, 66, 1, 
+	0, 0, 0, 14, 70, 1, 0, 0, 0, 16, 74, 1, 0, 0, 0, 18, 78, 1, 0, 0, 0, 20, 
+	88, 1, 0, 0, 0, 22, 125, 1, 0, 0, 0, 24, 25, 3, 2, 1, 0, 25, 26, 5, 0, 
+	0, 1, 26, 1, 1, 0, 0, 0, 27, 29, 3, 4, 2, 0, 28, 27, 1, 0, 0, 0, 29, 32, 
+	1, 0, 0, 0, 30, 28, 1, 0, 0, 0, 30, 31, 1, 0, 0, 0, 31, 3, 1, 0, 0, 0, 
+	32, 30, 1, 0, 0, 0, 33, 41, 3, 6, 3, 0, 34, 41, 3, 8, 4, 0, 35, 41, 3, 
+	14, 7, 0, 36, 41, 3, 16, 8, 0, 37, 41, 3, 18, 9, 0, 38, 39, 5, 36, 0, 0, 
+	39, 41, 6, 2, -1, 0, 40, 33, 1, 0, 0, 0, 40, 34, 1, 0, 0, 0, 40, 35, 1, 
+	0, 0, 0, 40, 36, 1, 0, 0, 0, 40, 37, 1, 0, 0, 0, 40, 38, 1, 0, 0, 0, 41, 
+	5, 1, 0, 0, 0, 42, 43, 5, 30, 0, 0, 43, 44, 5, 17, 0, 0, 44, 45, 3, 20, 
+	10, 0, 45, 46, 5, 16, 0, 0, 46, 7, 1, 0, 0, 0, 47, 48, 5, 25, 0, 0, 48, 
+	54, 3, 10, 5, 0, 49, 50, 5, 26, 0, 0, 50, 51, 5, 25, 0, 0, 51, 53, 3, 10, 
+	5, 0, 52, 49, 1, 0, 0, 0, 53, 56, 1, 0, 0, 0, 54, 52, 1, 0, 0, 0, 54, 55, 
+	1, 0, 0, 0, 55, 59, 1, 0, 0, 0, 56, 54, 1, 0, 0, 0, 57, 58, 5, 26, 0, 0, 
+	58, 60, 3, 12, 6, 0, 59, 57, 1, 0, 0, 0, 59, 60, 1, 0, 0, 0, 60, 9, 1, 
+	0, 0, 0, 61, 62, 5, 18, 0, 0, 62, 63, 3, 20, 10, 0, 63, 64, 5, 19, 0, 0, 
+	64, 65, 3, 12, 6, 0, 65, 11, 1, 0, 0, 0, 66, 67, 5, 20, 0, 0, 67, 68, 3, 
+	2, 1, 0, 68, 69, 5, 21, 0, 0, 69, 13, 1, 0, 0, 0, 70, 71, 5, 27, 0, 0, 
+	71, 72, 3, 20, 10, 0, 72, 73, 3, 12, 6, 0, 73, 15, 1, 0, 0, 0, 74, 75, 
+	5, 28, 0, 0, 75, 76, 3, 20, 10, 0, 76, 77, 5, 16, 0, 0, 77, 17, 1, 0, 0, 
+	0, 78, 79, 5, 29, 0, 0, 79, 80, 3, 20, 10, 0, 80, 81, 5, 16, 0, 0, 81, 
+	19, 1, 0, 0, 0, 82, 83, 6, 10, -1, 0, 83, 84, 5, 10, 0, 0, 84, 89, 3, 20, 
+	10, 9, 85, 86, 5, 15, 0, 0, 86, 89, 3, 20, 10, 8, 87, 89, 3, 22, 11, 0, 
+	88, 82, 1, 0, 0, 0, 88, 85, 1, 0, 0, 0, 88, 87, 1, 0, 0, 0, 89, 113, 1, 
+	0, 0, 0, 90, 91, 10, 10, 0, 0, 91, 92, 5, 14, 0, 0, 92, 112, 3, 20, 10, 
+	10, 93, 94, 10, 7, 0, 0, 94, 95, 7, 0, 0, 0, 95, 112, 3, 20, 10, 8, 96, 
+	97, 10, 6, 0, 0, 97, 98, 7, 1, 0, 0, 98, 112, 3, 20, 10, 7, 99, 100, 10, 
+	5, 0, 0, 100, 101, 7, 2, 0, 0, 101, 112, 3, 20, 10, 6, 102, 103, 10, 4, 
+	0, 0, 103, 104, 7, 3, 0, 0, 104, 112, 3, 20, 10, 5, 105, 106, 10, 3, 0, 
+	0, 106, 107, 5, 2, 0, 0, 107, 112, 3, 20, 10, 4, 108, 109, 10, 2, 0, 0, 
+	109, 110, 5, 1, 0, 0, 110, 112, 3, 20, 10, 3, 111, 90, 1, 0, 0, 0, 111, 
+	93, 1, 0, 0, 0, 111, 96, 1, 0, 0, 0, 111, 99, 1, 0, 0, 0, 111, 102, 1, 
+	0, 0, 0, 111, 105, 1, 0, 0, 0, 111, 108, 1, 0, 0, 0, 112, 115, 1, 0, 0, 
+	0, 113, 111, 1, 0, 0, 0, 113, 114, 1, 0, 0, 0, 114, 21, 1, 0, 0, 0, 115, 
+	113, 1, 0, 0, 0, 116, 117, 5, 18, 0, 0, 117, 118, 3, 20, 10, 0, 118, 119, 
+	5, 19, 0, 0, 119, 126, 1, 0, 0, 0, 120, 126, 7, 4, 0, 0, 121, 126, 7, 5, 
+	0, 0, 122, 126, 5, 30, 0, 0, 123, 126, 5, 33, 0, 0, 124, 126, 5, 24, 0, 
+	0, 125, 116, 1, 0, 0, 0, 125, 120, 1, 0, 0, 0, 125, 121, 1, 0, 0, 0, 125, 
+	122, 1, 0, 0, 0, 125, 123, 1, 0, 0, 0, 125, 124, 1, 0, 0, 0, 126, 23, 1, 
+	0, 0, 0, 8, 30, 40, 54, 59, 88, 111, 113, 125,
 }
   deserializer := antlr.NewATNDeserializer(nil)
   staticData.atn = deserializer.Deserialize(staticData.serializedATN)
@@ -2161,6 +2162,93 @@ func (s *MultiplicacionExprContext) Accept(visitor antlr.ParseTreeVisitor) inter
 }
 
 
+type PowExprContext struct {
+	*ExprContext
+}
+
+func NewPowExprContext(parser antlr.Parser, ctx antlr.ParserRuleContext) *PowExprContext {
+	var p = new(PowExprContext)
+
+	p.ExprContext = NewEmptyExprContext()
+	p.parser = parser
+	p.CopyFrom(ctx.(*ExprContext))
+
+	return p
+}
+
+func (s *PowExprContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *PowExprContext) AllExpr() []IExprContext {
+	children := s.GetChildren()
+	len := 0
+	for _, ctx := range children {
+		if _, ok := ctx.(IExprContext); ok {
+			len++
+		}
+	}
+
+	tst := make([]IExprContext, len)
+	i := 0
+	for _, ctx := range children {
+		if t, ok := ctx.(IExprContext); ok {
+			tst[i] = t.(IExprContext)
+			i++
+		}
+	}
+
+	return tst
+}
+
+func (s *PowExprContext) Expr(i int) IExprContext {
+	var t antlr.RuleContext;
+	j := 0
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IExprContext); ok {
+			if j == i {
+				t = ctx.(antlr.RuleContext);
+				break
+			}
+			j++
+		}
+	}
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IExprContext)
+}
+
+func (s *PowExprContext) POW() antlr.TerminalNode {
+	return s.GetToken(RuParserPOW, 0)
+}
+
+
+func (s *PowExprContext) EnterRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(RuListener); ok {
+		listenerT.EnterPowExpr(s)
+	}
+}
+
+func (s *PowExprContext) ExitRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(RuListener); ok {
+		listenerT.ExitPowExpr(s)
+	}
+}
+
+func (s *PowExprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case RuVisitor:
+		return t.VisitPowExpr(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
+
 type AtomExprContext struct {
 	*ExprContext
 }
@@ -2847,7 +2935,7 @@ func (p *RuParser) expr(_p int) (localctx IExprContext) {
 		panic(antlr.NewNoViableAltException(p, nil, nil, nil, nil, nil))
 	}
 	p.GetParserRuleContext().SetStop(p.GetTokenStream().LT(-1))
-	p.SetState(110)
+	p.SetState(113)
 	p.GetErrorHandler().Sync(p)
 	_alt = p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 6, p.GetParserRuleContext())
 
@@ -2857,22 +2945,40 @@ func (p *RuParser) expr(_p int) (localctx IExprContext) {
 				p.TriggerExitRuleEvent()
 			}
 			_prevctx = localctx
-			p.SetState(108)
+			p.SetState(111)
 			p.GetErrorHandler().Sync(p)
 			switch p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 5, p.GetParserRuleContext()) {
 			case 1:
+				localctx = NewPowExprContext(p, NewExprContext(p, _parentctx, _parentState))
+				p.PushNewRecursionContext(localctx, _startState, RuParserRULE_expr)
+				p.SetState(90)
+
+				if !(p.Precpred(p.GetParserRuleContext(), 10)) {
+					panic(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 10)", ""))
+				}
+				{
+					p.SetState(91)
+					p.Match(RuParserPOW)
+				}
+				{
+					p.SetState(92)
+					p.expr(10)
+				}
+
+
+			case 2:
 				localctx = NewMultiplicacionExprContext(p, NewExprContext(p, _parentctx, _parentState))
 				localctx.(*MultiplicacionExprContext).left = _prevctx
 
 
 				p.PushNewRecursionContext(localctx, _startState, RuParserRULE_expr)
-				p.SetState(90)
+				p.SetState(93)
 
 				if !(p.Precpred(p.GetParserRuleContext(), 7)) {
 					panic(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 7)", ""))
 				}
 				{
-					p.SetState(91)
+					p.SetState(94)
 
 					var _lt = p.GetTokenStream().LT(1)
 
@@ -2890,7 +2996,7 @@ func (p *RuParser) expr(_p int) (localctx IExprContext) {
 					}
 				}
 				{
-					p.SetState(92)
+					p.SetState(95)
 
 					var _x = p.expr(8)
 
@@ -2898,19 +3004,19 @@ func (p *RuParser) expr(_p int) (localctx IExprContext) {
 				}
 
 
-			case 2:
+			case 3:
 				localctx = NewAditivaExprContext(p, NewExprContext(p, _parentctx, _parentState))
 				localctx.(*AditivaExprContext).left = _prevctx
 
 
 				p.PushNewRecursionContext(localctx, _startState, RuParserRULE_expr)
-				p.SetState(93)
+				p.SetState(96)
 
 				if !(p.Precpred(p.GetParserRuleContext(), 6)) {
 					panic(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 6)", ""))
 				}
 				{
-					p.SetState(94)
+					p.SetState(97)
 
 					var _lt = p.GetTokenStream().LT(1)
 
@@ -2928,7 +3034,7 @@ func (p *RuParser) expr(_p int) (localctx IExprContext) {
 					}
 				}
 				{
-					p.SetState(95)
+					p.SetState(98)
 
 					var _x = p.expr(7)
 
@@ -2936,19 +3042,19 @@ func (p *RuParser) expr(_p int) (localctx IExprContext) {
 				}
 
 
-			case 3:
+			case 4:
 				localctx = NewRelacionalExprContext(p, NewExprContext(p, _parentctx, _parentState))
 				localctx.(*RelacionalExprContext).left = _prevctx
 
 
 				p.PushNewRecursionContext(localctx, _startState, RuParserRULE_expr)
-				p.SetState(96)
+				p.SetState(99)
 
 				if !(p.Precpred(p.GetParserRuleContext(), 5)) {
 					panic(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 5)", ""))
 				}
 				{
-					p.SetState(97)
+					p.SetState(100)
 
 					var _lt = p.GetTokenStream().LT(1)
 
@@ -2966,7 +3072,7 @@ func (p *RuParser) expr(_p int) (localctx IExprContext) {
 					}
 				}
 				{
-					p.SetState(98)
+					p.SetState(101)
 
 					var _x = p.expr(6)
 
@@ -2974,19 +3080,19 @@ func (p *RuParser) expr(_p int) (localctx IExprContext) {
 				}
 
 
-			case 4:
+			case 5:
 				localctx = NewIgualdadExprContext(p, NewExprContext(p, _parentctx, _parentState))
 				localctx.(*IgualdadExprContext).left = _prevctx
 
 
 				p.PushNewRecursionContext(localctx, _startState, RuParserRULE_expr)
-				p.SetState(99)
+				p.SetState(102)
 
 				if !(p.Precpred(p.GetParserRuleContext(), 4)) {
 					panic(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 4)", ""))
 				}
 				{
-					p.SetState(100)
+					p.SetState(103)
 
 					var _lt = p.GetTokenStream().LT(1)
 
@@ -3004,7 +3110,7 @@ func (p *RuParser) expr(_p int) (localctx IExprContext) {
 					}
 				}
 				{
-					p.SetState(101)
+					p.SetState(104)
 
 					var _x = p.expr(5)
 
@@ -3012,23 +3118,23 @@ func (p *RuParser) expr(_p int) (localctx IExprContext) {
 				}
 
 
-			case 5:
+			case 6:
 				localctx = NewAndExprContext(p, NewExprContext(p, _parentctx, _parentState))
 				localctx.(*AndExprContext).left = _prevctx
 
 
 				p.PushNewRecursionContext(localctx, _startState, RuParserRULE_expr)
-				p.SetState(102)
+				p.SetState(105)
 
 				if !(p.Precpred(p.GetParserRuleContext(), 3)) {
 					panic(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 3)", ""))
 				}
 				{
-					p.SetState(103)
+					p.SetState(106)
 					p.Match(RuParserAND)
 				}
 				{
-					p.SetState(104)
+					p.SetState(107)
 
 					var _x = p.expr(4)
 
@@ -3036,23 +3142,23 @@ func (p *RuParser) expr(_p int) (localctx IExprContext) {
 				}
 
 
-			case 6:
+			case 7:
 				localctx = NewOrExprContext(p, NewExprContext(p, _parentctx, _parentState))
 				localctx.(*OrExprContext).left = _prevctx
 
 
 				p.PushNewRecursionContext(localctx, _startState, RuParserRULE_expr)
-				p.SetState(105)
+				p.SetState(108)
 
 				if !(p.Precpred(p.GetParserRuleContext(), 2)) {
 					panic(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 2)", ""))
 				}
 				{
-					p.SetState(106)
+					p.SetState(109)
 					p.Match(RuParserOR)
 				}
 				{
-					p.SetState(107)
+					p.SetState(110)
 
 					var _x = p.expr(3)
 
@@ -3062,7 +3168,7 @@ func (p *RuParser) expr(_p int) (localctx IExprContext) {
 			}
 
 		}
-		p.SetState(112)
+		p.SetState(115)
 		p.GetErrorHandler().Sync(p)
 		_alt = p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 6, p.GetParserRuleContext())
 	}
@@ -3456,7 +3562,7 @@ func (p *RuParser) Atomo() (localctx IAtomoContext) {
 		}
 	}()
 
-	p.SetState(122)
+	p.SetState(125)
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
@@ -3464,15 +3570,15 @@ func (p *RuParser) Atomo() (localctx IAtomoContext) {
 		localctx = NewParExprContext(p, localctx)
 		p.EnterOuterAlt(localctx, 1)
 		{
-			p.SetState(113)
+			p.SetState(116)
 			p.Match(RuParserAPAR)
 		}
 		{
-			p.SetState(114)
+			p.SetState(117)
 			p.expr(0)
 		}
 		{
-			p.SetState(115)
+			p.SetState(118)
 			p.Match(RuParserCPAR)
 		}
 
@@ -3481,7 +3587,7 @@ func (p *RuParser) Atomo() (localctx IAtomoContext) {
 		localctx = NewNumberAtomContext(p, localctx)
 		p.EnterOuterAlt(localctx, 2)
 		{
-			p.SetState(117)
+			p.SetState(120)
 			_la = p.GetTokenStream().LA(1)
 
 			if !(_la == RuParserINT || _la == RuParserFLOAT) {
@@ -3497,7 +3603,7 @@ func (p *RuParser) Atomo() (localctx IAtomoContext) {
 		localctx = NewBooleanAtomContext(p, localctx)
 		p.EnterOuterAlt(localctx, 3)
 		{
-			p.SetState(118)
+			p.SetState(121)
 			_la = p.GetTokenStream().LA(1)
 
 			if !(_la == RuParserTRUE || _la == RuParserFALSE) {
@@ -3513,7 +3619,7 @@ func (p *RuParser) Atomo() (localctx IAtomoContext) {
 		localctx = NewIdAtomContext(p, localctx)
 		p.EnterOuterAlt(localctx, 4)
 		{
-			p.SetState(119)
+			p.SetState(122)
 			p.Match(RuParserID)
 		}
 
@@ -3522,7 +3628,7 @@ func (p *RuParser) Atomo() (localctx IAtomoContext) {
 		localctx = NewStringAtomContext(p, localctx)
 		p.EnterOuterAlt(localctx, 5)
 		{
-			p.SetState(120)
+			p.SetState(123)
 			p.Match(RuParserSTRING)
 		}
 
@@ -3531,7 +3637,7 @@ func (p *RuParser) Atomo() (localctx IAtomoContext) {
 		localctx = NewNilAtomContext(p, localctx)
 		p.EnterOuterAlt(localctx, 6)
 		{
-			p.SetState(121)
+			p.SetState(124)
 			p.Match(RuParserNIL)
 		}
 
@@ -3565,21 +3671,24 @@ func (p *RuParser) Expr_Sempred(localctx antlr.RuleContext, predIndex int) bool 
 
 	switch predIndex {
 	case 0:
-			return p.Precpred(p.GetParserRuleContext(), 7)
+			return p.Precpred(p.GetParserRuleContext(), 10)
 
 	case 1:
-			return p.Precpred(p.GetParserRuleContext(), 6)
+			return p.Precpred(p.GetParserRuleContext(), 7)
 
 	case 2:
-			return p.Precpred(p.GetParserRuleContext(), 5)
+			return p.Precpred(p.GetParserRuleContext(), 6)
 
 	case 3:
-			return p.Precpred(p.GetParserRuleContext(), 4)
+			return p.Precpred(p.GetParserRuleContext(), 5)
 
 	case 4:
-			return p.Precpred(p.GetParserRuleContext(), 3)
+			return p.Precpred(p.GetParserRuleContext(), 4)
 
 	case 5:
+			return p.Precpred(p.GetParserRuleContext(), 3)
+
+	case 6:
 			return p.Precpred(p.GetParserRuleContext(), 2)
 
 	default:

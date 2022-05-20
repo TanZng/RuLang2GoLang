@@ -60,6 +60,10 @@ func (v *BaseRuVisitor) VisitMultiplicacionExpr(ctx *MultiplicacionExprContext) 
 	return v.VisitChildren(ctx)
 }
 
+func (v *BaseRuVisitor) VisitPowExpr(ctx *PowExprContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
 func (v *BaseRuVisitor) VisitAtomExpr(ctx *AtomExprContext) interface{} {
 	return v.VisitChildren(ctx)
 }
