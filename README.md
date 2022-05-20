@@ -83,7 +83,8 @@ Está clase contiene un constructor Visitor(tree) que contiene un antlr.ParseTre
 Run:
 
 ```bash
-$ go run .
+$ go build -o /out/webapp
+$ ./out/webapp
 # output
 # 🚀 Serving at  http://127.0.0.1:5555
 ```

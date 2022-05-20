@@ -2,7 +2,8 @@ console.log("JS Loaded")
 
 const url = "127.0.0.1:5555"
 
-var inputForm = document.getElementById("inputForm")
+const inputForm = document.getElementById("inputForm");
+const fileToLoadButton = document.getElementById("fileToLoad");
 
 function createPre(value) {
     let pre = document.createElement('pre');
@@ -24,20 +25,15 @@ function textAreaAdjust(element) {
 }
 
 function toggleTheme() {
-    var element = document.documentElement;
-    var theme = element.dataset.theme
+    const theme = document.documentElement.dataset.theme;
     if (theme === "dark"){
-        element.dataset.theme = "night"
+        document.documentElement.dataset.theme = "night"
     } else {
-        element.dataset.theme = "dark"
+        document.documentElement.dataset.theme = "dark"
     }
 }
 
-inputForm.addEventListener("submit", (e)=>{
-
-    //prevent auto submission
-    e.preventDefault()
-
+function runRuScript(){
     const formdata = new FormData(inputForm)
     fetch(url,{
 
@@ -47,13 +43,58 @@ inputForm.addEventListener("submit", (e)=>{
         response => response.text()
     ).then(
         (data) => {
-            outputs = data.split("\n")
+            const outputs = data.split("\n")
             for (let out of outputs) {
                 document.getElementById("serverMessageBox").appendChild(createPre(out))}
-            }
+        }
 
     ).catch(
         error => console.error(error)
     )
+}
+
+function loadFileAsText(){
+    try {
+        const fileToLoad = document.getElementById("fileToLoad").files[0];
+
+        const fileReader = new FileReader();
+        const scriptBox = document.getElementById("message")
+        fileReader.onload = function(fileLoadedEvent){
+            scriptBox.value = fileLoadedEvent.target.result;
+
+            textAreaAdjust(scriptBox)
+
+        };
+
+        fileReader.readAsText(fileToLoad, "UTF-8");
+
+        runRuScript();
+
+        document.getElementById("buttonSubmit").classList.add('btn-primary')
+        document.getElementById("buttonSubmit").classList.remove('btn-disabled')
+        const errorFile = document.getElementById("noFileError");
+        errorFile.classList.add("hidden");
+    } catch (error) {
+        console.error(error);
+        const errorFile = document.getElementById("noFileError");
+        errorFile.classList.remove("hidden");
+    }
+}
+
+fileToLoadButton.addEventListener("change", (e)=>{
+    // btn-disabled buttonSubmit
+    if( e.target.value !== "") {
+        console.log("AQUI ESTOY")
+        document.getElementById("buttonSubmit").classList.remove('btn-primary')
+        document.getElementById("buttonSubmit").classList.add('btn-disabled')
+    }
+})
+
+inputForm.addEventListener("submit", (e)=>{
+
+    //prevent auto submission
+    e.preventDefault()
+
+    runRuScript()
 
 })
