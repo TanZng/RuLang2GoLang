@@ -4,6 +4,15 @@
 
 ![Test](./img/RuExample.gif "Test")
 
+## Index
+
+1. [🔨 Implementación](https://github.com/TanZng/RuLang2GoLang#-implementaci%C3%B3n)
+2. [👓 Grammar](https://github.com/TanZng/RuLang2GoLang#-grammar)
+3. [🖼 Ejemplos de ejecución](https://github.com/TanZng/RuLang2GoLang#-ejemplos-de-ejecuci%C3%B3n)
+4. [🚀 Run](https://github.com/TanZng/RuLang2GoLang#-run)
+5. [💻 Development](https://github.com/TanZng/RuLang2GoLang#-run)
+
+
 ## 🔨 Implementación
 
 Los programas que reconocen lenguajes se denominan analizadores sintácticos o analizadores de sintaxis. La sintaxis se refiere a las reglas que gobiernan la pertenencia del lenguaje. Por otro lado, una gramática (_grammar_) es solo un conjunto de reglas, cada una de las cuales expresa la estructura de una frase.
@@ -53,7 +62,7 @@ La clase Visitor implementa los metodos que la interfaz RuVisitor requiere. Est�
 
 El Visitor y el arbol a recorrer son instanciados en el método `Init(string)` en `translator/translator.go`. Este metodo es llamado por el servidor en `cmd/server/server.go` para que el código dado sea traducido y ejecutado cuando una petición le llega. Finalmente es el `main.go` inicia el servidor.
 
-## Grammar
+## 👓 Grammar
 
 Este Traductor consta de un analizador léxico, un analizador sintáctico, y
 reconocer y ejecutar lo siguiente:
@@ -92,7 +101,7 @@ Además maneja errores:
 - Llamar variables que no fueron declaradas.
 - Punto y coma (`;`) faltante.
 
-### Ejemplos de ejecución
+### 🖼 Ejemplos de ejecución
 
 ![Ejemplo de ejecicion 2](./img/test2.png "Ejemplo de ejecicion 2")
 
