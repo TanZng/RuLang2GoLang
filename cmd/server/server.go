@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"os"
 	"time"
 )
 
@@ -13,7 +14,14 @@ var Port = ":5555"
 func Init() {
 
 	http.HandleFunc("/", ServeFiles)
-	fmt.Println("🚀 Serving at ", "http://127.0.0.1"+Port)
+
+	value := os.Getenv("ENVIRONMENT")
+	if value == "PROD" {
+		fmt.Println("🚀 Serving at ", "http://127.0.0.1/ru")
+	} else {
+		fmt.Println("🚀 Serving at ", "http://127.0.0.1"+Port)
+	}
+
 	log.Fatal(http.ListenAndServe(Port, nil))
 }
 

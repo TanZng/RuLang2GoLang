@@ -6,11 +6,8 @@ services:
       dockerfile: "Dockerfile"
     environment:
       GO111MODULE: "on"
+      ENVIRONMENT: "DEV"
     ports:
       - '5555:5555'
     volumes:
       - ./:/app
-    networks:
-      - webapp
-networks:
-  webapp:

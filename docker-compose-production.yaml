@@ -4,6 +4,8 @@ services:
     build:
       context: "."
       dockerfile: "Dockerfile.production"
+    environment:
+      ENVIRONMENT: "PROD"
     ports:
       - "5555"
   nginx:
@@ -12,3 +14,5 @@ services:
       - "80:80"
     depends_on:
       - "goservice"
+    volumes:
+      - ./web:/var/www/web

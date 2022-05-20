@@ -23,6 +23,15 @@ function textAreaAdjust(element) {
     element.style.height = (25+element.scrollHeight)+"px";
 }
 
+function toggleTheme() {
+    var element = document.documentElement;
+    var theme = element.dataset.theme
+    if (theme === "dark"){
+        element.dataset.theme = "night"
+    } else {
+        element.dataset.theme = "dark"
+    }
+}
 
 inputForm.addEventListener("submit", (e)=>{
 
