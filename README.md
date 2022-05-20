@@ -86,6 +86,12 @@ Atomos
 - [x] stringAtom
 - [x] nilAtom
 
+Además maneja errores:
+- Las operaciones solo pueden ser entre elementos del mismo tipo.
+- El modulo (`%`) no se puede realizar en con FLOATs.
+- Llamar variables que no fueron declaradas.
+- Punto y coma (`;`) faltante.
+
 ### Ejemplos de ejecución
 
 ![Ejemplo de ejecicion 2](./img/test2.png "Ejemplo de ejecicion 2")
