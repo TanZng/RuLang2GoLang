@@ -1,8 +1,8 @@
 # Ru2Go Translator
 
 > Tania R. Zúñiga - Traductores Trimestre 22 I
-> 
-> ![Test](./img/RuExample.gif "Test")
+
+![Test](./img/RuExample.gif "Test")
 
 ## 🔨 Implementación
 
