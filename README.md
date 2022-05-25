@@ -31,15 +31,16 @@ Ademas, el proceso de agrupar caracteres en palabras o símbolos (tokens) se den
 
 Llamamos _Lexer_ a un programa que tokeniza la entrada. El lexer puede agrupar tokens relacionados en clases de tokens o tipos de tokens. El analizador real y se alimenta de esos tokens para reconocer la estructura de la oración.
 
-Un árbol de análisis o árbol de sintaxis que registra cómo el analizador reconoció la estructura de la oración de entrada y sus frases componentes Los nodos interiores del árbol de análisis son nombres de frases que agrupan e identifican a sus hijos.
+Un árbol de análisis o árbol de sintaxis, registra cómo el analizador reconoció la estructura de la oración de entrada y las frases que la componen. Los nodos interiores del árbol corresponden a nombres de frases que agrupan e identifican a sus hijos.
 
-El árbol de análisis, un analizador ofrece una estructura de datos útil para el resto de la aplicación que contiene información completa sobre cómo el analizador agrupó los símbolos en frases
+El árbol de sintaxis, es una estructura de datos útil para el resto de la aplicación, pues contiene la información de cómo el analizador agrupó los símbolos en frases.
 
-La herramienta ANTLR genera analizadores de descenso recursivo a partir de reglas gramaticales.
+La herramienta ANTLR genera analizadores de descenso recursivo (LL) a partir de reglas gramaticales.
 
-Los objetos de contexto registran todo lo que sabemos sobre el reconocimiento de una frase por una regla. Cada objeto de contexto conoce los tokens de inicio y finalización de la frase reconocida y proporciona acceso a todos los elementos de esa frase.
+Los objetos de contexto registran todo lo que sabemos sobre el reconocimiento de una frase por una regla. Cada objeto de contexto conoce los tokens de inicio y final de la frase reconocida, y proporciona acceso a todos los elementos de esa frase.
 
-En este caso queremos controlar el paseo en sí mismo, llamando explícitamente a métodos para visitar a los nodos hijos. ANTLR permite generar una interfaz de `Visitor` a partir de una gramática, está contiene un método de visita por regla.
+En este caso queremos controlar el paseo en sí mismo, llamando explícitamente a métodos para visitar a los nodos hijos. ANTLR genera una interfaz `Visitor`, a partir de una gramática, está contiene un método de visita por regla.
+
 Aquí está el patrón familiar de visitantes que opera en nuestro árbol de análisis:
 
 ![Parse-Tree Visitors](./img/parseTreeVisitor.png "Parse-Tree Visitors")
